@@ -25,14 +25,7 @@ jobs:
 
       - name: Package Python application
         run: |
-          mkdir package
-          cp calculator.py package/
-          cp test_calculator.py package/
-          cp README.md package/
-          cd package
-          zip -r ../python-calculator.zip .
-      - name: Package Python application
-        run: |
+          rm -rf package
           mkdir package
           cp calculator.py package/
           cp test_calculator.py package/
