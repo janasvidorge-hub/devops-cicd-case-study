@@ -31,3 +31,17 @@ jobs:
           cp README.md package/
           cd package
           zip -r ../python-calculator.zip .
+      - name: Package Python application
+        run: |
+          mkdir package
+          cp calculator.py package/
+          cp test_calculator.py package/
+          cp README.md package/
+          cd package
+          zip -r ../python-calculator.zip .
+
+      - name: Upload application package
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-calculator
+          path: python-calculator.zip
